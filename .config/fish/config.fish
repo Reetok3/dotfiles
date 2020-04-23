@@ -1,5 +1,4 @@
 set fish_plugins theme git rbenv rails brew bundler gem osx pbcopy better-alias gi peco z 
-# Path to Oh My Fish install.
 set -gx OMF_PATH $HOME/.local/share/omf
 
 # Customize Oh My Fish configuration path.
