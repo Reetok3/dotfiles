@@ -40,6 +40,7 @@ let g:auto_save = 1
 
 " Unite.vim
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/neomru.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " insert modeで開始
 let g:unite_enable_start_insert = 1
@@ -52,6 +53,8 @@ nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
 " grep検索結果の再呼出
 nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+nnoremap ,uc :<C-u>Unite file<CR>
+nnoremap ,uh :<C-u>Unite file_mru<CR>
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
   let g:unite_source_grep_command = 'ag'
@@ -103,6 +106,10 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-t> :terminal<CR>
+
+nmap / /\v
 
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
 call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
